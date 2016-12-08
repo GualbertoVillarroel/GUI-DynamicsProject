@@ -1,0 +1,4 @@
+test\MainConfiguration.class
+test\CreateAccountTest.class
+test\LoginTest.class
+test\AccountsSectionTest.class

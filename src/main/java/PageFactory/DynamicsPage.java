@@ -21,6 +21,12 @@ public class DynamicsPage {
   @FindBy(css = "span#TabSFA[title=Sales]")
   WebElement navTabSalesButton;
 
+  @FindBy(xpath = "//*[@id=\"gridBodyTable\"]")
+  WebElement accountsTable;
+
+  @FindBy(xpath = "//*[@id=\"globalquickcreate_actionsdiv_NavBarGloablQuickCreate\"]")
+  WebElement navBarQuickCreate;
+
 
   //SALES SECTION
   //SalesTab > Customers > Accounts
@@ -122,5 +128,13 @@ public class DynamicsPage {
 
   public WebElement getListAccountsContainer() {
     return listAccountsContainer;
+  }
+
+  public WebElement getAccountsTable() {
+    return accountsTable;
+  }
+
+  public WebElement getNavBarQuickCreate() {
+    return navBarQuickCreate;
   }
 }

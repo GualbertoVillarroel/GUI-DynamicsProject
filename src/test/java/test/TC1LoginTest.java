@@ -14,16 +14,16 @@ import java.util.concurrent.TimeUnit;
 
 import static org.testng.Assert.assertTrue;
 
-public class LoginTest {
+public class TC1LoginTest {
   WebDriver driver;
   WebDriverWait wait;
   DynamicsLogin objLogin;
-  DynamicsPage objHomePage;
+  DynamicsPage objDinamPage;
 
 
   @BeforeTest
   public void setup() {
-
+    //Without Singleton
     System.setProperty("webdriver.chrome.driver", "C:\\chromedriver_win32\\chromedriver.exe");
     driver = new ChromeDriver();
     driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
@@ -48,11 +48,12 @@ public class LoginTest {
     objLogin.clickLogin();
 
     //Go the next page
-    objHomePage = new DynamicsPage(driver);
+    objDinamPage = new DynamicsPage(driver);
 
     //Verify main navegationBar in home page is displayed
-    wait.until(ExpectedConditions.elementToBeClickable(objHomePage.getMainNavegationBar()));
-    assertTrue(objHomePage.getMainNavegationBar().isDisplayed());
+    wait.until(ExpectedConditions.elementToBeClickable(objDinamPage.getMainNavegationBar()));
+    assertTrue(objDinamPage.getMainNavegationBar().isDisplayed());
+
   }
 
   @AfterTest

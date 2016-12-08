@@ -2,9 +2,9 @@
 <suite name="default-test">
     <test name="MyTest">
         <classes>
-            <class name="test.LoginTest"/>
-            <class name="test.AccountsSectionTest"/>
-            <class name="test.CreateAccountTest"/>
+            <class name="test.TC1LoginTest"/>
+            <class name="test.TC2CreateAccountTest"/>
+            <class name="test.TC3AccountsSectionTest"/>
         </classes>
     </test>
 </suite>

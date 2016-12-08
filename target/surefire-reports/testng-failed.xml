@@ -3,13 +3,12 @@
 <suite verbose="0" name="Failed suite [default-test]">
   <test name="MyTest(failed)">
     <classes>
-      <class name="test.AccountsSectionTest">
+      <class name="test.LoginTest">
         <methods>
           <include name="setup"/>
-          <include name="testSalesAccecs"/>
           <include name="tearDown"/>
         </methods>
-      </class> <!-- test.AccountsSectionTest -->
+      </class> <!-- test.LoginTest -->
       <class name="test.CreateAccountTest">
         <methods>
           <include name="testCreateAccountTest"/>
@@ -17,12 +16,6 @@
           <include name="tearDown"/>
         </methods>
       </class> <!-- test.CreateAccountTest -->
-      <class name="test.LoginTest">
-        <methods>
-          <include name="setup"/>
-          <include name="tearDown"/>
-        </methods>
-      </class> <!-- test.LoginTest -->
     </classes>
   </test> <!-- MyTest(failed) -->
 </suite> <!-- Failed suite [default-test] -->

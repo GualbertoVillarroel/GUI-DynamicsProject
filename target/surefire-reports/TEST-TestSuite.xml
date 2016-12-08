@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report.xsd" name="TestSuite" time="111.628" tests="3" errors="0" skipped="0" failures="0">
+<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report.xsd" name="TestSuite" time="109.192" tests="2" errors="0" skipped="0" failures="1">
   <properties>
     <property name="java.runtime.name" value="Java(TM) SE Runtime Environment"/>
     <property name="sun.boot.library.path" value="C:\Program Files\Java\jdk1.8.0_101\jre\bin"/>
@@ -62,7 +62,10 @@
     <property name="sun.desktop" value="windows"/>
     <property name="sun.cpu.isalist" value="amd64"/>
   </properties>
-  <testcase name="testLogin" classname="test.LoginTest" time="30.237"/>
-  <testcase name="testSalesAccecs" classname="test.AccountsSectionTest" time="21.69"/>
-  <testcase name="testCreateAccountTest" classname="test.CreateAccountTest" time="33.01"/>
+  <testcase name="testLogin" classname="test.LoginTest" time="17.616"/>
+  <testcase name="testCreateAccountTest" classname="test.CreateAccountTest" time="75.313">
+    <failure type="java.lang.NullPointerException">java.lang.NullPointerException
+	at test.CreateAccountTest.testCreateAccountTest(CreateAccountTest.java:76)
+</failure>
+  </testcase>
 </testsuite>

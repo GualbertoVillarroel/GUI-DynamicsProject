@@ -17,15 +17,15 @@ import java.util.concurrent.TimeUnit;
 import static org.testng.Assert.assertTrue;
 
 
-public class AccountsSectionTest {
+public class TC3AccountsSectionTest {
   WebDriver driver;
   WebDriverWait wait;
   DynamicsLogin objLogin;
-  DynamicsPage objHomePage;
+  DynamicsPage objDynamPage;
 
   @BeforeTest
   public void setup() {
-
+    //Without Singleton
     System.setProperty("webdriver.chrome.driver", "C:\\chromedriver_win32\\chromedriver.exe");
     driver = new ChromeDriver();
     driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
@@ -40,7 +40,7 @@ public class AccountsSectionTest {
   }
 
   @Test(priority = 2)
-  public void testSalesAccecs() {
+  public void testAccountsSection() {
     //Create Login Page object
     objLogin = new DynamicsLogin(driver);
 
@@ -50,16 +50,16 @@ public class AccountsSectionTest {
     objLogin.clickLogin();
 
     //Go the next page
-    objHomePage = new DynamicsPage(driver);
+    objDynamPage = new DynamicsPage(driver);
 
     //Go to Accounts Section
-    wait.until(ExpectedConditions.elementToBeClickable(objHomePage.getMainNavegationBar()));
+    wait.until(ExpectedConditions.elementToBeClickable(objDynamPage.getMainNavegationBar()));
 
-    wait.until(ExpectedConditions.elementToBeClickable(objHomePage.getNavTabSalesButton()));
-    objHomePage.getNavTabSalesButton().click();
+    wait.until(ExpectedConditions.elementToBeClickable(objDynamPage.getNavTabSalesButton()));
+    objDynamPage.getNavTabSalesButton().click();
 
-    wait.until(ExpectedConditions.elementToBeClickable(objHomePage.getCustomersAccountsButton()));
-    objHomePage.getCustomersAccountsButton().click();
+    wait.until(ExpectedConditions.elementToBeClickable(objDynamPage.getCustomersAccountsButton()));
+    objDynamPage.getCustomersAccountsButton().click();
 
     //Change to iFrame
     driver.switchTo().defaultContent();
@@ -67,10 +67,11 @@ public class AccountsSectionTest {
     driver.switchTo().frame(element);
 
     //Verify the accounts list is displayed
-    wait.until(ExpectedConditions.elementToBeClickable(objHomePage.getListAccountsContainer()));
-    assertTrue(objHomePage.getListAccountsContainer().isDisplayed());
+    wait.until(ExpectedConditions.elementToBeClickable(objDynamPage.getListAccountsContainer()));
+    assertTrue(objDynamPage.getListAccountsContainer().isDisplayed());
 
-    assertTrue(driver.findElement(By.xpath("//*[@id=\"gridBodyTable\"]")).getText().contains("New account 2 created by Selenium"));
+   // assertTrue(driver.findElement(By.xpath("//*[@id=\"gridBodyTable\"]")).getText().contains("New account 2 created by Selenium"));
+    assertTrue(objDynamPage.getAccountsTable().getText().contains("New account 2 created by Selenium"));
 
   }
 
