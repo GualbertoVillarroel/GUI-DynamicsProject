@@ -1,24 +1,52 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results skipped="0" failed="0" total="1" passed="1">
+<testng-results skipped="0" failed="0" total="3" passed="3">
   <reporter-output>
   </reporter-output>
-  <suite name="default-test" duration-ms="29044" started-at="2016-12-06T22:54:20Z" finished-at="2016-12-06T22:54:49Z">
+  <suite name="default-test" duration-ms="111202" started-at="2016-12-08T00:37:40Z" finished-at="2016-12-08T00:39:31Z">
     <groups>
     </groups>
-    <test name="MyTest" duration-ms="29044" started-at="2016-12-06T22:54:20Z" finished-at="2016-12-06T22:54:49Z">
-      <class name="test.LoginTest">
-        <test-method status="PASS" signature="setup()[pri:0, instance:test.LoginTest@6bf256fa]" name="setup" is-config="true" duration-ms="15698" started-at="2016-12-06T18:54:20Z" finished-at="2016-12-06T18:54:35Z">
+    <test name="MyTest" duration-ms="111202" started-at="2016-12-08T00:37:40Z" finished-at="2016-12-08T00:39:31Z">
+      <class name="test.AccountsSectionTest">
+        <test-method status="PASS" signature="setup()[pri:0, instance:test.AccountsSectionTest@3d8c7aca]" name="setup" is-config="true" duration-ms="9155" started-at="2016-12-07T20:37:40Z" finished-at="2016-12-07T20:37:49Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setup -->
-        <test-method status="PASS" signature="testHomePageDashboardTitle()[pri:0, instance:test.LoginTest@6bf256fa]" name="testHomePageDashboardTitle" duration-ms="11790" started-at="2016-12-06T18:54:35Z" finished-at="2016-12-06T18:54:47Z">
+        <test-method status="PASS" signature="setup()[pri:0, instance:test.CreateAccountTest@783e6358]" name="setup" is-config="true" duration-ms="7003" started-at="2016-12-07T20:37:49Z" finished-at="2016-12-07T20:37:56Z">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- testHomePageDashboardTitle -->
-        <test-method status="PASS" signature="tearDown()[pri:0, instance:test.LoginTest@6bf256fa]" name="tearDown" is-config="true" duration-ms="1545" started-at="2016-12-06T18:54:47Z" finished-at="2016-12-06T18:54:49Z">
+        </test-method> <!-- setup -->
+        <test-method status="PASS" signature="setup()[pri:0, instance:test.LoginTest@4e04a765]" name="setup" is-config="true" duration-ms="7578" started-at="2016-12-07T20:37:56Z" finished-at="2016-12-07T20:38:04Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setup -->
+        <test-method status="PASS" signature="testSalesAccecs()[pri:0, instance:test.AccountsSectionTest@3d8c7aca]" name="testSalesAccecs" duration-ms="21688" started-at="2016-12-07T20:38:34Z" finished-at="2016-12-07T20:38:55Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testSalesAccecs -->
+        <test-method status="PASS" signature="tearDown()[pri:0, instance:test.AccountsSectionTest@3d8c7aca]" name="tearDown" is-config="true" duration-ms="1038" started-at="2016-12-07T20:39:28Z" finished-at="2016-12-07T20:39:30Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDown -->
+        <test-method status="PASS" signature="tearDown()[pri:0, instance:test.CreateAccountTest@783e6358]" name="tearDown" is-config="true" duration-ms="710" started-at="2016-12-07T20:39:30Z" finished-at="2016-12-07T20:39:30Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+        <test-method status="PASS" signature="tearDown()[pri:0, instance:test.LoginTest@4e04a765]" name="tearDown" is-config="true" duration-ms="749" started-at="2016-12-07T20:39:30Z" finished-at="2016-12-07T20:39:31Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+      </class> <!-- test.AccountsSectionTest -->
+      <class name="test.CreateAccountTest">
+        <test-method status="PASS" signature="testCreateAccountTest()[pri:0, instance:test.CreateAccountTest@783e6358]" name="testCreateAccountTest" duration-ms="33012" started-at="2016-12-07T20:38:55Z" finished-at="2016-12-07T20:39:28Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testCreateAccountTest -->
+      </class> <!-- test.CreateAccountTest -->
+      <class name="test.LoginTest">
+        <test-method status="PASS" signature="testLogin()[pri:0, instance:test.LoginTest@4e04a765]" name="testLogin" duration-ms="30261" started-at="2016-12-07T20:38:04Z" finished-at="2016-12-07T20:38:34Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testLogin -->
       </class> <!-- test.LoginTest -->
     </test> <!-- MyTest -->
   </suite> <!-- default-test -->
