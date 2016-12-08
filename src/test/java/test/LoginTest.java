@@ -1,6 +1,6 @@
 package test;
 
-import PageFactory.DynamicsHomePage;
+import PageFactory.DynamicsPage;
 import PageFactory.DynamicsLogin;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
@@ -15,19 +15,17 @@ public class LoginTest {
   WebDriver driver;
   WebDriverWait wait;
   DynamicsLogin objLogin;
-  DynamicsHomePage objHomePage;
-  private String baseUrl;
+  DynamicsPage objHomePage;
+
 
   @BeforeTest
   public void setup() {
     MainConfiguration mainConfiguration = MainConfiguration.INSTANCE;
     driver = mainConfiguration.getDriver();
-    baseUrl = "https://fundacionorgtest.crm2.dynamics.com/main.aspx";
-    driver.get(baseUrl);
     wait = mainConfiguration.getWait();
   }
 
-  @Test(priority = 0)
+  @Test()
   public void testLogin() {
     //Create Login Page object
     objLogin = new DynamicsLogin(driver);
@@ -38,11 +36,11 @@ public class LoginTest {
     objLogin.clickLogin();
 
     //Go the next page
-    objHomePage = new DynamicsHomePage(driver);
+    objHomePage = new DynamicsPage(driver);
 
-    //Verify navegation bar in home page is displayed
-    wait.until(ExpectedConditions.elementToBeClickable(objHomePage.getNavegationBar()));
-    assertTrue(objHomePage.getNavegationBar().isDisplayed());
+    //Verify main navegationBar in home page is displayed
+    wait.until(ExpectedConditions.elementToBeClickable(objHomePage.getMainNavegationBar()));
+    assertTrue(objHomePage.getMainNavegationBar().isDisplayed());
   }
 
   @AfterTest

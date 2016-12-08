@@ -6,90 +6,102 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.pagefactory.AjaxElementLocatorFactory;
 
-public class DynamicsHomePage {
+public class DynamicsPage {
   WebDriver driver;
 
+  //Main Navegation MenuBar
   @FindBy(id = "navBar")
-  WebElement navegationBar;
+  WebElement mainNavegationBar;
 
+  //Navegation MenuItem Sales
   @FindBy(css = "span:contains(\"Sales\")")
-  WebElement salesButton;
+  WebElement navItemSalesButton;
 
-
+  //Navegation MenuItem SalesTab
   @FindBy(css = "span#TabSFA[title=Sales]")
-  WebElement salesTabButton;
+  WebElement navTabSalesButton;
 
-  //  @FindBy(css = "#nav_accts > span.nav-rowLabel")
+
+  //SALES SECTION
+  //SalesTab > Customers > Accounts
   @FindBy(id = "nav_accts")
-  WebElement navAccountsButton;
+  WebElement customersAccountsButton;
 
   @FindBy(id = "navTabGlobalCreateImage")
   WebElement navTabGlobal;
 
+  //Accounts List
+  @FindBy(id = "crmGrid")
+  WebElement listAccountsContainer;
+
+
+  //NEW SECTION
+  //New > Records > Account
   @FindBy(xpath = ".//*[@id='{70816501-edb9-4740-a16c-6a5efbc05d84}']")
-  WebElement recordsAccountButton;
+  WebElement recAccountButton;
 
+  //Title of the Account form
   @FindBy(className = "mscrm-globalqc-entityname")
-  WebElement accountTittle;
+  WebElement accountFormTittle;
 
+  //Button to save a new account
   @FindBy(id = "globalquickcreate_save_button_NavBarGloablQuickCreate")
-  WebElement saveAccountButton;
+  WebElement saveNewAccountButton;
 
 
-  //iFrame (id="NavBarGloablQuickCreate") webElements
+  //FRAME SECTION OF NEW ACCOUNTS
+  //iFrame (id = "NavBarGloablQuickCreate")
   @FindBy(id = "name_cl")
   WebElement accountNameLabel;
 
   @FindBy(id = "name_i")
   WebElement accountNameTextField;
 
-  @FindBy(id="telephone1_i")
+  @FindBy(xpath = ".//*[@id='telephone1_i']")
   WebElement mainPhoneTextField;
 
 
-
-
-  public DynamicsHomePage(WebDriver driver) {
+  public DynamicsPage(WebDriver driver) {
     this.driver = driver;
     //This initElements method will create all WebElements
     AjaxElementLocatorFactory factory = new AjaxElementLocatorFactory(driver, 100);
     PageFactory.initElements(factory, this);
   }
 
-  public WebElement getNavegationBar() {
-    return navegationBar;
+  public WebElement getMainNavegationBar() {
+    return mainNavegationBar;
   }
 
-  public WebElement getSalesButton() {
-    return salesButton;
+  public WebElement getNavItemSalesButton() {
+    return navItemSalesButton;
   }
 
-  public WebElement getSalesTabButton() {
-    return salesTabButton;
+  public WebElement getNavTabSalesButton() {
+    return navTabSalesButton;
   }
 
-  public WebElement getNavAccountsButton() {
-    return navAccountsButton;
+  public WebElement getCustomersAccountsButton() {
+    return customersAccountsButton;
   }
 
   public void clickSalesButton() {
-    salesButton.click();
+    navItemSalesButton.click();
   }
 
   public void clickAccountButton() {
-    navAccountsButton.click();
+    customersAccountsButton.click();
   }
 
   public WebElement getNavTabGlobal() {
     return navTabGlobal;
   }
 
-  public WebElement getRecordsAccountButton() {
-    return recordsAccountButton;
+  public WebElement getRecAccountButton() {
+    return recAccountButton;
   }
 
-  public WebElement getAccountTittle() {
-    return accountTittle;
+  public WebElement getAccountFormTittle() {
+    return accountFormTittle;
   }
 
   public WebElement getAccountNameLabel() {
@@ -104,7 +116,11 @@ public class DynamicsHomePage {
     return mainPhoneTextField;
   }
 
-  public WebElement getSaveAccountButton() {
-    return saveAccountButton;
+  public WebElement getSaveNewAccountButton() {
+    return saveNewAccountButton;
+  }
+
+  public WebElement getListAccountsContainer() {
+    return listAccountsContainer;
   }
 }

@@ -3,7 +3,8 @@
     <test name="MyTest">
         <classes>
             <class name="test.LoginTest"/>
-            <class name="test.SalesTest"/>
+            <class name="test.AccountsSectionTest"/>
+            <class name="test.CreateAccountTest"/>
         </classes>
     </test>
 </suite>

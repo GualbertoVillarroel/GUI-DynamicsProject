@@ -1,8 +1,10 @@
 package test;
 
-import PageFactory.DynamicsHomePage;
+import PageFactory.DynamicsPage;
 import PageFactory.DynamicsLogin;
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.annotations.AfterTest;
@@ -11,19 +13,17 @@ import org.testng.annotations.Test;
 
 import static org.testng.Assert.assertTrue;
 
-public class SalesTest {
+
+public class AccountsSectionTest {
   WebDriver driver;
   WebDriverWait wait;
   DynamicsLogin objLogin;
-  DynamicsHomePage objHomePage;
-  private String baseUrl;
+  DynamicsPage objHomePage;
 
   @BeforeTest
   public void setup() {
     MainConfiguration mainConfiguration = MainConfiguration.INSTANCE;
     driver = mainConfiguration.getDriver();
-    baseUrl = "https://fundacionorgtest.crm2.dynamics.com/main.aspx";
-    driver.get(baseUrl);
     wait = mainConfiguration.getWait();
   }
 
@@ -38,17 +38,25 @@ public class SalesTest {
     objLogin.clickLogin();
 
     //Go the next page
-    objHomePage = new DynamicsHomePage(driver);
+    objHomePage = new DynamicsPage(driver);
 
-    wait.until(ExpectedConditions.elementToBeClickable(objHomePage.getNavegationBar()));
-    assertTrue(objHomePage.getNavegationBar().isDisplayed());
+    //Go to Accounts Section
+    wait.until(ExpectedConditions.elementToBeClickable(objHomePage.getMainNavegationBar()));
 
-    wait.until(ExpectedConditions.elementToBeClickable(objHomePage.getSalesTabButton()));
-    //assertTrue(objHomePage.getSalesTabButton().isDisplayed());
-    objHomePage.getSalesTabButton().click();
+    wait.until(ExpectedConditions.elementToBeClickable(objHomePage.getNavTabSalesButton()));
+    objHomePage.getNavTabSalesButton().click();
 
-    wait.until(ExpectedConditions.elementToBeClickable(objHomePage.getNavAccountsButton()));
-    objHomePage.getNavAccountsButton().click();
+    wait.until(ExpectedConditions.elementToBeClickable(objHomePage.getCustomersAccountsButton()));
+    objHomePage.getCustomersAccountsButton().click();
+
+    //Change to iFrame
+    driver.switchTo().defaultContent();
+    WebElement element = driver.findElement(By.id("contentIFrame0"));
+    driver.switchTo().frame(element);
+
+    //Verify the accounts list is displayed
+    wait.until(ExpectedConditions.elementToBeClickable(objHomePage.getListAccountsContainer()));
+    assertTrue(objHomePage.getListAccountsContainer().isDisplayed());
   }
 
   @AfterTest
